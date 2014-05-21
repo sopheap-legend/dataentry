@@ -147,7 +147,6 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         })
     ");
     
-    $url=Yii::app()->createUrl('DoubleEntryProfile/CheckNationalID/');
     Yii::app()->clientScript->registerScript( 'check_national_id',"
         $('#DoubleEntryProfile_national_id').on('change',function(e) {
             var s_national_val;
@@ -164,16 +163,148 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
             }else
             {
                 $.ajax({
-                url:'$url', 
+                url:'CheckNationalID', 
                 dataType : 'json',    
                 type : 'post',
                 data : {s_national_id:s_national_val,d_national_id:d_national_val},
                 success : function(data) {
                         if(data!=null)
                         {   
-                            $('#flash-error').html(data.div_nid_error);
+                            $('#nid-error').html(data.div_nid_error);
                         }else{
-                            $('#flash-error').html('');  
+                            $('#nid-error').html('');  
+                        }                    
+                    }
+                });
+            }
+        });
+    ");    
+    
+    Yii::app()->clientScript->registerScript( 'check_fullname',"
+        $('#DoubleEntryProfile_fullname').on('change',function(e) {
+            var s_fullname_val;
+            var d_fullname_val;
+            s_fullname_val=$('#fullname').val();
+            d_fullname_val=$('#DoubleEntryProfile_fullname').val();
+            if(s_fullname_val=='')
+            {
+               $('.message').hide();
+               $('.load-indicator').slideUp('slow');
+               $('.message').slideToggle();
+               $('div.alert').html('Please Retrieve Your Image first');
+               $('.message').animate({opacity: 1.0}, 3000).fadeOut('slow');
+            }else
+            {
+                $.ajax({
+                url:'CheckFullname', 
+                dataType : 'json',    
+                type : 'post',
+                data : {s_fullname:s_fullname_val,d_fullname:d_fullname_val},
+                success : function(data) {
+                        if(data!=null)
+                        {   
+                            $('#fullname-warning').html(data.div_fullname_warn);
+                        }else{
+                            $('#fullname-warning').html('');  
+                        }                    
+                    }
+                });
+            }
+        });
+    ");
+    
+    Yii::app()->clientScript->registerScript( 'check_msisdn',"
+        $('#DoubleEntryProfile_msisdn').on('change',function(e) {
+            var s_msisdn_val;
+            var d_msisdn_val;
+            s_msisdn_val=$('#msisdn').val();
+            d_msisdn_val=$('#DoubleEntryProfile_msisdn').val();
+            if(s_msisdn_val=='')
+            {
+               $('.message').hide();
+               $('.load-indicator').slideUp('slow');
+               $('.message').slideToggle();
+               $('div.alert').html('Please Retrieve Your Image first');
+               $('.message').animate({opacity: 1.0}, 3000).fadeOut('slow');
+            }else
+            {
+                $.ajax({
+                url:'CheckMsisdn', 
+                dataType : 'json',    
+                type : 'post',
+                data : {s_msisdn:s_msisdn_val,d_msisdn:d_msisdn_val},
+                success : function(data) {
+                        if(data!=null)
+                        {   
+                            $('#msisdn-warning').html(data.div_msisdn_warn);
+                        }else{
+                            $('#msisdn-warning').html('');  
+                        }                    
+                    }
+                });
+            }
+        });
+    ");
+    
+    Yii::app()->clientScript->registerScript( 'check_imsi',"
+        $('#DoubleEntryProfile_imsi').on('change',function(e) {
+            var s_imsi_val;
+            var d_imsi_val;
+            s_imsi_val=$('#imsi').val();
+            d_imsi_val=$('#DoubleEntryProfile_imsi').val();
+            if(s_imsi_val=='')
+            {
+               $('.message').hide();
+               $('.load-indicator').slideUp('slow');
+               $('.message').slideToggle();
+               $('div.alert').html('Please Retrieve Your Image first');
+               $('.message').animate({opacity: 1.0}, 3000).fadeOut('slow');
+            }else
+            {
+                $.ajax({
+                url:'CheckImsi', 
+                dataType : 'json',    
+                type : 'post',
+                data : {s_imsi:s_imsi_val,d_imsi:d_imsi_val},
+                success : function(data) {
+                        if(data!=null)
+                        {   
+                            $('#imsi-warning').html(data.div_imsi_warn);
+                        }else{
+                            $('#imsi-warning').html('');  
+                        }                    
+                    }
+                });
+            }
+        });
+    ");
+    
+    Yii::app()->clientScript->registerScript( 'check_vendorid',"
+        $('#DoubleEntryProfile_vendorid').on('change',function(e) {
+            var s_vendorid_val;
+            var d_vendorid_val;
+            s_vendorid_val=$('#vendorid').val();
+            d_vendorid_val=$('#DoubleEntryProfile_vendorid').val();
+            if(s_vendorid_val=='')
+            {
+               $('.message').hide();
+               $('.load-indicator').slideUp('slow');
+               $('.message').slideToggle();
+               $('div.alert').html('Please Retrieve Your Image first');
+               $('.message').animate({opacity: 1.0}, 3000).fadeOut('slow');
+            }else
+            {
+                $.ajax({
+                url:'CheckVendorID', 
+                dataType : 'json',    
+                type : 'post',
+                data : {s_vendorid:s_vendorid_val,d_vendorid:d_vendorid_val},
+                success : function(data) {
+                        if(data!=null)
+                        {   
+                            $('#vendorid-warning').html(data.div_vendorid_warn);
+                        }else{
+                            $('#vendorid-warning').html('');  
                         }                    
                     }
                 });

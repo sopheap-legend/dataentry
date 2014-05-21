@@ -8,7 +8,7 @@
                 ?>
                 <div>
                     <?php echo $form->labelEx($model,'national_id'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <font size="2" color="red" id="flash-error"></font>
+                    <font size="2" color="red" id="nid-error"></font>
                 </div>
                 <?php //echo $form->textFieldControlGroup($model,'national_id', array('placeholder' => 'National ID', 'span' => 4))
                     $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
@@ -25,7 +25,7 @@
                 ?>
                 <?php //echo $form->hiddenField($model,'national_id',array()); ?>
             </div>
-            <div class="span-1">
+            <div class="span-1">                
                 <?php echo $form->dropDownListControlGroup($model,'title',array('MR'=>'Mr','MS'=>'Ms',''=>''), array('span' => 2.5)); ?>
             </div>            
         </td>        
@@ -33,7 +33,12 @@
     <tr>
         <td>
             <div class="span-1">
-                <?php echo $form->textFieldControlGroup($model,'fullname', array('placeholder' => 'Customer Name', 'span' => 2.5)); ?>
+                <div>
+                    <?php echo $form->labelEx($model,'fullname'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <font size="2" color="red" id="fullname-warning"></font>
+                </div>
+                <?php echo $form->textField($model,'fullname', array('placeholder' => 'Customer Name', 'span' => 2.5)); ?>
+                <?php echo $form->error($model,'fullname'); ?>
             </div>
             <div class="span-1">
                 <div><?php echo $form->labelEx($model,'dob'); ?></div>
@@ -145,13 +150,28 @@
     <tr>
         <td>           
             <div class="span-1">
-                <?php echo $form->textFieldControlGroup($model,'msisdn',array('placeholder' => 'Telephone','span' => 2)) ?>
+                <div>
+                    <?php echo $form->labelEx($model,'msisdn'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <font size="2" color="red" id="msisdn-warning"></font>
+                </div>
+                <?php echo $form->textField($model,'msisdn',array('placeholder' => 'Telephone','span' => 2)) ?>
+                <?php echo $form->error($model,'msisdn'); ?>
             </div>  
             <div class="span-1">
-                <?php echo $form->textFieldControlGroup($model,'imsi',array('placeholder' => 'IMSI','span' => 2)); ?>
+                <div>
+                    <?php echo $form->labelEx($model,'imsi'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <font size="2" color="red" id="imsi-warning"></font>
+                </div>
+                <?php echo $form->textField($model,'imsi',array('placeholder' => 'IMSI','span' => 2)); ?>
+                <?php echo $form->error($model,'imsi'); ?>
             </div>
             <div class="span-1">
-                <?php echo $form->textFieldControlGroup($model,'vendorid',array('placeholder' => 'Vendor ID','span' => 1)); ?>
+                <div>
+                    <?php echo $form->labelEx($model,'vendorid'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <font size="2" color="red" id="vendorid-warning"></font>
+                </div>
+                <?php echo $form->textField($model,'vendorid',array('placeholder' => 'Vendor ID','span' => 1)); ?>
+                <?php echo $form->error($model,'vendorid'); ?>
             </div>
         </td>
     </tr>

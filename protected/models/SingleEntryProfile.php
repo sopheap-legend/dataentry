@@ -211,7 +211,8 @@ class SingleEntryProfile extends CActiveRecord
         
         public function count_unavaiable_file($filename)
         {
-            $sql="select count(*) nrec from session where data like '%".$filename."%'";
+            $username=Yii::app()->user->name;
+            $sql="select count(*) nrec from session where data like '%".$filename."%' and data not like '%".$username."%'";
             $cmd = Yii::app()->db->createCommand($sql);
             return $cmd->queryScalar(); 
         }

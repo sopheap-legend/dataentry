@@ -32,7 +32,10 @@ class DoubleEntryProfileController extends Controller
                             'users'=>array('*'),
                     ),
                     array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                            'actions'=>array('create','update','DoubleEntryForm','ReadPdf','RetrieveImage','WelcomeImage','DynamicDistrict','DynamicCommune','DynamicVillage','CheckNationalID'),
+                            'actions'=>array('create','update','DoubleEntryForm',
+                                'ReadPdf','RetrieveImage','WelcomeImage','DynamicDistrict',
+                                'DynamicCommune','DynamicVillage','CheckNationalID','CheckFullname',
+                                'CheckMsisdn','CheckImsi','CheckVendorID'),
                             'users'=>array('@'),
                     ),
                     array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -183,20 +186,17 @@ class DoubleEntryProfileController extends Controller
 
     public function actionRetrieveImage()
     {
-        //$filepath=$this->get_randomfile();
-        //$filename=substr($filepath,strrpos($filepath,'\\',-1)+1);
-        
-        //$file_input = DailyFileInput::model()->find('file_name=:file_name',array('file_name'=>$session['double_filename']));
-        //$cust_profile = SingleEntryProfile::model()->findBypk($file_input->file_id);
-        
-        $url=Yii::app()->baseUrl.'/index.php/DoubleEntryProfile/ReadPdf/';
+        $filepath=$this->get_randomfile();
+        $filename=substr($filepath,strrpos($filepath,'/',-1)+1);        
+                
+        $url=Yii::app()->baseUrl.'/index.php/DoubleEntryProfile/ReadPdf?filename='.$filepath;
         $frame="";
         $frame.="
         <iframe id='fred' style='border:1px solid #666CCC' title='PDF in an i-Frame' 
             src='$url' frameborder='1' scrolling='auto' height='820' width='630' >
         </iframe>";
-        $session = Yii::app()->getSession();
-        $cust_profile = SingleEntryProfile::model()->with('daily_input')->find('file_name=:file_name',array('file_name'=>$session['double_filename']));
+        //echo Yii::app()->user->name;
+        $cust_profile = SingleEntryProfile::model()->with('daily_input')->find('file_name=:file_name',array('file_name'=>$filename));
         $data['status']='success';
         $data['div_national_id']=$cust_profile['national_id'];
         $data['div_fullname']=$cust_profile['fullname'];
@@ -207,11 +207,8 @@ class DoubleEntryProfileController extends Controller
         echo CJSON::encode($data);
     }
 
-    public function actionReadPdf()
-    {
-        
-        $filename=$this->get_randomfile();
-        //echo $filename; die();
+    public function actionReadPdf($filename)
+    {         
         try{
             set_error_handler(array(&$this, "exception_error_handler")); 
             if($filename!='NO')
@@ -349,6 +346,74 @@ class DoubleEntryProfileController extends Controller
                 echo CJSON::encode($data);
             }else{
                 $data['div_nid_error'] ='';
+                echo CJSON::encode($data);
+            }
+        }else{
+            
+        }
+    }
+    
+    public function actionCheckFullname()
+    {
+        if(isset($_POST['s_fullname']) && $_POST['d_fullname'])
+        {
+            if($_POST['d_fullname']!=$_POST['s_fullname'])
+            {                
+                $data['div_fullname_warn'] ='Not match!';
+                echo CJSON::encode($data);
+            }else{
+                $data['div_fullname_warn'] ='';
+                echo CJSON::encode($data);
+            }
+        }else{
+            
+        }
+    }
+    
+    public function actionCheckMsisdn()
+    {
+        if(isset($_POST['s_msisdn']) && $_POST['d_msisdn'])
+        {
+            if($_POST['d_msisdn']!=$_POST['s_msisdn'])
+            {                
+                $data['div_msisdn_warn'] ='Not match!';
+                echo CJSON::encode($data);
+            }else{
+                $data['div_msisdn_warn'] ='';
+                echo CJSON::encode($data);
+            }
+        }else{
+            
+        }
+    }
+    
+    public function actionCheckImsi()
+    {
+        if(isset($_POST['s_imsi']) && $_POST['d_imsi'])
+        {
+            if($_POST['d_imsi']!=$_POST['s_imsi'])
+            {                
+                $data['div_imsi_warn'] ='Not match!';
+                echo CJSON::encode($data);
+            }else{
+                $data['div_imsi_warn'] ='';
+                echo CJSON::encode($data);
+            }
+        }else{
+            
+        }
+    }
+    
+    public function actionCheckVendorID()
+    {
+        if(isset($_POST['s_vendorid']) && $_POST['d_vendorid'])
+        {
+            if($_POST['d_vendorid']!=$_POST['s_vendorid'])
+            {                
+                $data['div_vendorid_warn'] ='Not match!';
+                echo CJSON::encode($data);
+            }else{
+                $data['div_vendorid_warn'] ='';
                 echo CJSON::encode($data);
             }
         }else{
