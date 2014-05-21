@@ -44,6 +44,10 @@ class SingleEntryProfileController extends Controller
                     ),
             );
     }
+    
+    public function exception_error_handler($errno, $errstr, $errfile, $errline ) {
+        throw new ErrorException($errstr, $errno, 0, $errfile, $errline);
+    }
 
     /**
      * Displays a particular model.
@@ -183,8 +187,6 @@ class SingleEntryProfileController extends Controller
 
     public function actionRetrieveImage()
     {
-        //$filepath=$this->get_randomfile();
-        //$filename=substr($filepath,strrpos($filepath,'\\',-1)+1);
         $url=Yii::app()->baseUrl.'/index.php/SingleEntryProfile/ReadPdf/';
         $frame="";
         $frame.="
@@ -198,22 +200,22 @@ class SingleEntryProfileController extends Controller
     }
 
     public function actionReadPdf()
-    {
-        
+    { 
         $filename=$this->get_randomfile();
+        //echo $filename; die();
         try{
             set_error_handler(array(&$this, "exception_error_handler")); 
             if($filename!='NO')
             {
                 $cov_filename=substr($filename,strrpos($filename,'/',-1)+1);                
                 //$batch_file=substr($cov_filename,0,strpos($cov_filename,'_',5));
-                $batch_id=SingleEntryProfile::model()->upate_batch_file($cov_filename);                
+                $batch_id=SingleEntryProfile::model()->update_batch_file($cov_filename);                
                 Yii::app()->session['filename'] =$cov_filename; //bind filename to session
                 Yii::app()->session['batch_file_id']=$batch_id; //bind batch id to ession
                 Yii::app()->session['type_input']='SingleEntry';
             }
         }catch(Exception $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
         }
         
         if($filename=='NO')
@@ -337,6 +339,7 @@ class SingleEntryProfileController extends Controller
 
     public function actionFirstEntrySubmit()
     {
+        $session = Yii::app()->getSession();       
         $model= new SingleEntryProfile();
         $this->performAjaxValidation($model);        
         
@@ -346,8 +349,9 @@ class SingleEntryProfileController extends Controller
             $transaction=$model->dbConnection->beginTransaction();            
             try 
             {
-                $session = Yii::app()->getSession();                    
-                $model->file_id=$model->daily_file_save($session['batch_file_id'], $session['filename']);                    
+                set_error_handler(array(&$this, "exception_error_handler")); 
+                
+                $model->file_id=$model->daily_file_save($session['batch_file_id'], $session['filename']);
                 $status=$model->audit_log($model->file_id, $user_id, 'input', '');
                 if($status)
                 {
@@ -365,22 +369,23 @@ class SingleEntryProfileController extends Controller
                     $model->imsi=$_POST['SingleEntryProfile']['imsi'];
                    
                     if($model->save())
-                    {
+                    {                        
                         $curr_path="/vagrant/single_entry";
-                        $next_path="/vagrant/double_intry";
+                        $next_path="/vagrant/double_entry";
                         $move_file_script='mv '.$curr_path.'/'.$session['filename'].' '.$next_path.'/'.$session['filename'];
                         $output = shell_exec($move_file_script);
                         //echo "<pre>$output</pre>";
-                    }                   
+                    }
                     
                     Yii::app()->session->remove('filename');
-                    Yii::app()->session->remove('batch_file_id');   
+                    Yii::app()->session->remove('batch_file_id'); 
                     $transaction->commit();
                 }                
             }catch (Exception $e){
                 Yii::app()->session->remove('filename');
                 Yii::app()->session->remove('batch_file_id');
                 $transaction->rollback();
+                //echo $e->getMessage(); die();
             } 
         }        
         $this->redirect(array('SingleEntryForm'));
@@ -400,6 +405,7 @@ class SingleEntryProfileController extends Controller
                 set_error_handler(array(&$this, "exception_error_handler"));
                 if($session['filename']!='')
                 {
+                    //$status='';
                     $user_id=Yii::app()->user->getId();
                     $model->file_id=$model->daily_file_save($session['batch_file_id'], $session['filename']);                    
                     $status=$model->audit_log($model->file_id, $user_id, 'rejected', $_POST['reason']);
@@ -503,20 +509,24 @@ class SingleEntryProfileController extends Controller
             
             if($cust_info['commune_code']!='')
             {
+                $data['div_commune_box']= CambodiaCommune::model()->getCommune((int)$cust_info['province_code'], 
+                                                                                (int)$cust_info['district_code'],
+                                                                                (int)$cust_info['commune_code']);
                 $data['div_commune_code']= $cust_info['commune_code'];
                 $data['div_commune_name']= $cust_info['commune_name'];
             }else{
                 $data['div_commune_code']='';
-                $data['div_commune_name']='Select District';
+                $data['div_commune_name']='Select Commune';
             }
             
             if($cust_info['village_code']!='')
             {
+                $data['div_village_box']= CambodiaVillage::model()->getVillage((int)$cust_info['province_code'],(int)$cust_info['district_code'],(int)$cust_info['commune_code'],(int)$cust_info['village_code']);
                 $data['div_village_code']= $cust_info['village_code'];
                 $data['div_village_name']= $cust_info['village'];
             }else{
                 $data['div_village_code']='';
-                $data['div_village_name']='Select District';
+                $data['div_village_name']='Select Village';
             }            
             //$data['div_single_form']=$this->renderpartial('_ajax_content',array('model'=>$model,));
             echo CJSON::encode($data);

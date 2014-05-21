@@ -117,10 +117,9 @@ class CambodiaDistrict extends CActiveRecord
     {
         $select_form='';
         //$district_arr=array();
-        $data= CambodiaDistrict::model()->findall('province_code=:province_code and district_code=:district_code',
+        $data= CambodiaDistrict::model()->findall('province_code=:province_code',
                     array(
                             ':province_code'=>(int)$province_code,
-                            ':district_code'=>(int)$district_code
                         )
                     );
         $data=CHtml::listData($data,'district_code','district_name');

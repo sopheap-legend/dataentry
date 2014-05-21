@@ -177,7 +177,9 @@ Yii::app()->clientScript->registerScript( 'province_code',"
                         $('#SingleEntryProfile_province_code').select2('data', {id: data.div_province_code, text: data.div_province_name});
                         $('#SingleEntryProfile_district_code').html(data.div_district_box);
                         $('#SingleEntryProfile_district_code').select2('data', {id: data.div_district_code, text: data.div_district_name});
+                        $('#SingleEntryProfile_commune_code').html(data.div_commune_box);
                         $('#SingleEntryProfile_commune_code').select2('data', {id: data.div_commune_code, text: data.div_commune_name});
+                        $('#SingleEntryProfile_village_code').html(data.div_village_box);
                         $('#SingleEntryProfile_village_code').select2('data', {id: data.div_village_code, text: data.div_village_name});
                     }
                 }

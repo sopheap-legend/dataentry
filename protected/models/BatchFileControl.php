@@ -7,6 +7,7 @@
  * @property string $batch_file_id
  * @property string $batch_file_name
  * @property integer $company_id
+ * @property string $folder_path
  * @property string $event_date
  */
 class BatchFileControl extends CActiveRecord
@@ -27,12 +28,14 @@ class BatchFileControl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('batch_file_name', 'required'),
 			array('company_id', 'numerical', 'integerOnly'=>true),
 			array('batch_file_name', 'length', 'max'=>30),
+			array('folder_path', 'length', 'max'=>50),
 			array('event_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('batch_file_id, batch_file_name, company_id, event_date', 'safe', 'on'=>'search'),
+			array('batch_file_id, batch_file_name, company_id, folder_path, event_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +59,7 @@ class BatchFileControl extends CActiveRecord
 			'batch_file_id' => 'Batch File',
 			'batch_file_name' => 'Batch File Name',
 			'company_id' => 'Company',
+			'folder_path' => 'Folder Path',
 			'event_date' => 'Event Date',
 		);
 	}
@@ -81,6 +85,7 @@ class BatchFileControl extends CActiveRecord
 		$criteria->compare('batch_file_id',$this->batch_file_id,true);
 		$criteria->compare('batch_file_name',$this->batch_file_name,true);
 		$criteria->compare('company_id',$this->company_id);
+		$criteria->compare('folder_path',$this->folder_path,true);
 		$criteria->compare('event_date',$this->event_date,true);
 
 		return new CActiveDataProvider($this, array(

@@ -221,7 +221,7 @@ class SingleEntryProfile extends CActiveRecord
         {            
             $model= new DailyFileInput();
             
-            $file_input = DailyFileInput::model()->find('file_name=:file_name',array('file_name'=>$filename));
+            $file_input = DailyFileInput::model()->find('file_name=:file_name',array(':file_name'=>$filename));
             if($file_input['file_id'] !='')
             {
                 $file_id= $file_input['file_id'];
@@ -239,8 +239,8 @@ class SingleEntryProfile extends CActiveRecord
         public function audit_log($file_id,$user_id,$flag,$reasion)
         {
             $model = new UserActionLog();
-            $model->file_id=$file_id;
-            $model->user_id=$user_id;
+            $model->file_id=(int)$file_id;
+            $model->user_id=(int)$user_id;
             $model->event_date=date("Y-m-d H:i:s");
             $model->flag=$flag;
             $model->reason=$reasion;
