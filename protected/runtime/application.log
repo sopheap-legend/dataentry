@@ -35368,3 +35368,582 @@ in /var/www/dataentry/index.php (13)
 in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
 in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
 in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:20 [warning] [application] Failed to set unsafe attribute "village_name" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:20 [warning] [application] Failed to set unsafe attribute "street_no" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:20 [warning] [application] Failed to set unsafe attribute "house_no" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:22 [warning] [application] Failed to set unsafe attribute "village_name" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:22 [warning] [application] Failed to set unsafe attribute "street_no" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:22 [warning] [application] Failed to set unsafe attribute "house_no" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:25 [warning] [application] Failed to set unsafe attribute "village_name" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:25 [warning] [application] Failed to set unsafe attribute "street_no" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 14:59:25 [warning] [application] Failed to set unsafe attribute "house_no" of "SingleEntryProfile".
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (173)
+in /var/www/dataentry/protected/controllers/SingleEntryProfileController.php (344)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:53 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:53 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:53 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:53 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:53 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:53 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:55 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:55 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:55 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:55 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:55 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:55 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:57 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:57 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:57 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:57 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:57 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:18:57 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:00 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:00 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:00 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:00 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:00 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:00 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:07 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:07 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:07 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:07 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:07 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:07 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:10 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:10 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:10 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:11 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:11 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:11 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:26 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:26 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:26 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:26 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:26 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:26 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:30 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:30 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:30 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:30 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:30 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:19:30 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:51 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:51 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:51 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:51 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:51 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:51 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:53 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:53 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:53 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:54 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:54 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:54 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:55 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:55 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:55 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:56 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:56 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:23:56 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:00 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:00 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:00 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:00 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:00 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:00 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:02 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:02 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:02 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:02 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:02 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:02 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:04 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:04 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:04 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:05 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:05 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:05 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:06 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:06 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:06 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:07 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:07 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:07 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:11 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:11 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:11 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:11 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:11 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:11 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:13 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:13 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:13 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (295)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:13 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:13 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:13 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:14 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:14 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:14 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (317)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:15 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:15 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:15 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:18 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:18 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:18 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (277)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:19 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:19 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:24:19 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:05 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:05 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:05 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:10 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:10 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:10 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:22 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:22 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 15:32:22 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:30:46 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:30:46 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:30:46 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:31:39 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:31:39 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:31:39 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:33:43 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:33:43 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:33:43 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:33:50 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:33:50 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:33:50 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:34:05 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:34:05 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:34:05 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:40 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:41 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:41 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:47 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:47 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:47 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:47 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:47 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:47 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:53 [warning] [application] Failed to set unsafe attribute "village_name" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:53 [warning] [application] Failed to set unsafe attribute "street_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)
+2014/05/23 16:37:53 [warning] [application] Failed to set unsafe attribute "house_no" of "DoubleEntryProfile".
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (172)
+in /var/www/dataentry/protected/controllers/DoubleEntryProfileController.php (180)
+in /var/www/dataentry/index.php (13)

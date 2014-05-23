@@ -35,7 +35,7 @@ class DoubleEntryProfileController extends Controller
                             'actions'=>array('create','update','DoubleEntryForm',
                                 'ReadPdf','RetrieveImage','WelcomeImage','DynamicDistrict',
                                 'DynamicCommune','DynamicVillage','CheckNationalID','CheckFullname',
-                                'CheckMsisdn','CheckImsi','CheckVendorID'),
+                                'CheckMsisdn','CheckImsi','CheckVendorID','RetrieveCustInfo'),
                             'users'=>array('@'),
                     ),
                     array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -419,5 +419,68 @@ class DoubleEntryProfileController extends Controller
         }else{
             
         }
+    }
+    
+    public function actionRetrieveCustInfo()
+    {        
+        $model = new DoubleEntryProfile();
+        if(Yii::app()->request->isAjaxRequest)
+        {      
+            //$province=array();
+            //$cust_info=  CustomerInfo::model()->find('national_id=:national_id',array(':national_id'=>$_POST['national_id']));            
+            $cust_info= CustomerInfo::model()->get_customer_info($_POST['national_id']);
+            //$province=$this->GetProvince($cust_info['province_code']);
+            $data['div_title']=$cust_info['title'];
+            $data['div_dob']=$cust_info['dob'];
+            $data['div_name']=$cust_info['fullname'];            
+            $data['div_vil_name']=$cust_info['village_name'];
+            $data['div_str_no']=$cust_info['street_no'];
+            $data['div_house_no']=$cust_info['house_no'];
+            $data['status']='success';
+            
+            if($cust_info['province_code']!='')
+            {
+                $data['div_province_code']= $cust_info['province_code'];
+                $data['div_province_name']= $cust_info['province_name'];
+            }else{
+                $data['div_province_code']='';
+                $data['div_province_name']='Select Province';
+            }
+            
+            if($cust_info['district_code']!='')
+            {
+                //$model->district_code=$cust_info['district_code'];
+                $data['div_district_box']= CambodiaDistrict::model()->getDistrict((int)$cust_info['province_code'], (int)$cust_info['district_code']);
+                $data['div_district_code']= $cust_info['district_code'];
+                $data['div_district_name']= $cust_info['district_name'];
+            }else{
+                $data['div_district_code']='';
+                $data['div_district_name']='Select District';
+            }
+            
+            if($cust_info['commune_code']!='')
+            {
+                $data['div_commune_box']= CambodiaCommune::model()->getCommune((int)$cust_info['province_code'], 
+                                                                                (int)$cust_info['district_code'],
+                                                                                (int)$cust_info['commune_code']);
+                $data['div_commune_code']= $cust_info['commune_code'];
+                $data['div_commune_name']= $cust_info['commune_name'];
+            }else{
+                $data['div_commune_code']='';
+                $data['div_commune_name']='Select Commune';
+            }
+            
+            if($cust_info['village_code']!='')
+            {
+                $data['div_village_box']= CambodiaVillage::model()->getVillage((int)$cust_info['province_code'],(int)$cust_info['district_code'],(int)$cust_info['commune_code'],(int)$cust_info['village_code']);
+                $data['div_village_code']= $cust_info['village_code'];
+                $data['div_village_name']= $cust_info['village'];
+            }else{
+                $data['div_village_code']='';
+                $data['div_village_name']='Select Village';
+            }            
+            //$data['div_single_form']=$this->renderpartial('_ajax_content',array('model'=>$model,));
+            echo CJSON::encode($data);
+        }            
     }
 }

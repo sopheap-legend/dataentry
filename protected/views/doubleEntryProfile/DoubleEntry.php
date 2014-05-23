@@ -147,6 +147,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         })
     ");
     
+    //to check whether it matched with single entry?
     Yii::app()->clientScript->registerScript( 'check_national_id',"
         $('#DoubleEntryProfile_national_id').on('change',function(e) {
             var s_national_val;
@@ -180,6 +181,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         });
     ");    
     
+    //to check whether it matched with single entry?
     Yii::app()->clientScript->registerScript( 'check_fullname',"
         $('#DoubleEntryProfile_fullname').on('change',function(e) {
             var s_fullname_val;
@@ -213,6 +215,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         });
     ");
     
+    //to check whether it matched with single entry?
     Yii::app()->clientScript->registerScript( 'check_msisdn',"
         $('#DoubleEntryProfile_msisdn').on('change',function(e) {
             var s_msisdn_val;
@@ -246,6 +249,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         });
     ");
     
+    //to check whether it matched with single entry?
     Yii::app()->clientScript->registerScript( 'check_imsi',"
         $('#DoubleEntryProfile_imsi').on('change',function(e) {
             var s_imsi_val;
@@ -279,6 +283,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         });
     ");
     
+    //to check whether it matched with single entry?
     Yii::app()->clientScript->registerScript( 'check_vendorid',"
         $('#DoubleEntryProfile_vendorid').on('change',function(e) {
             var s_vendorid_val;
@@ -309,6 +314,66 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                     }
                 });
             }
+        });
+    ");
+    
+    //update province, district, commune, village in select2 box
+    Yii::app()->clientScript->registerScript( 'double_remove_selected_district',"
+        $('#DoubleEntryProfile_province_code').on('change',function(e) {
+            $('#DoubleEntryProfile_district_code').select2('data', {id: null, text: 'Select District'});
+            $('#DoubleEntryProfile_commune_code').select2('data', {id: null, text: 'Select Commune'});
+            $('#DoubleEntryProfile_village_code').select2('data', {id: null, text: 'Select Village'});
+            $('#DoubleEntryProfile_commune_code').html('<option value=\'\'>Select Commune<option>');
+            $('#DoubleEntryProfile_village_code').html('<option value=\'\'>Select Village<option>');
+        });
+    ");
+
+    Yii::app()->clientScript->registerScript( 'double_remove_selected_commune',"
+        $('#DoubleEntryProfile_district_code').on('change',function(e) {
+            //$('#DoubleEntryProfile_commune_code').select2('data', {id: null, text: 'Select Commune'});
+            $('#DoubleEntryProfile_village_code').select2('data', {id: null, text: 'Select Village'});
+            $('#DoubleEntryProfile_commune_code').html('<option value=\'\'>Select Commune<option>');
+            $('#DoubleEntryProfile_village_code').html('<option value=\'\'>Select Village<option>');
+        });
+    ");
+
+    Yii::app()->clientScript->registerScript( 'double_remove_selected_village',"
+        $('#DoubleEntryProfile_commune_code').on('change',function(e) {
+            //$('#DoubleEntryProfile_commune_code').select2('data', {id: null, text: 'Select Commune'});
+            $('#DoubleEntryProfile_village_code').select2('data', {id: null, text: 'Select Village'});
+            $('#DoubleEntryProfile_village_code').html('<option value=\'\'>Select Village<option>');
+        });
+    ");
+    
+    //to auto update the customer info in double entry form
+    Yii::app()->clientScript->registerScript( 'update_double_entry_form',"
+        $('#DoubleEntryProfile_national_id').on('change',function(e) {
+            var national_val;
+            national_val=$('#DoubleEntryProfile_national_id').val();
+            $.ajax({
+            url:'RetrieveCustInfo', 
+            dataType : 'json',    
+            type : 'post',
+            data : {national_id:national_val},
+            success : function(data) {
+                    if(data.status=='success')
+                    {
+                        $('#DoubleEntryProfile_title').val(data.div_title);
+                        $('#DoubleEntryProfile_fullname').val(data.div_name);
+                        $('#DoubleEntryProfile_dob').val(data.div_dob);
+                        $('#DoubleEntryProfile_village_name').val(data.div_vil_name);
+                        $('#DoubleEntryProfile_street_no').val(data.div_str_no);
+                        $('#DoubleEntryProfile_house_no').val(data.div_house_no);
+                        $('#DoubleEntryProfile_province_code').select2('data', {id: data.div_province_code, text: data.div_province_name});
+                        $('#DoubleEntryProfile_district_code').html(data.div_district_box);
+                        $('#DoubleEntryProfile_district_code').select2('data', {id: data.div_district_code, text: data.div_district_name});
+                        $('#DoubleEntryProfile_commune_code').html(data.div_commune_box);
+                        $('#DoubleEntryProfile_commune_code').select2('data', {id: data.div_commune_code, text: data.div_commune_name});
+                        $('#DoubleEntryProfile_village_code').html(data.div_village_box);
+                        $('#DoubleEntryProfile_village_code').select2('data', {id: data.div_village_code, text: data.div_village_name});
+                    }
+                }
+            });
         });
     ");
 ?>
