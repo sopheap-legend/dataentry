@@ -35,7 +35,7 @@ class DoubleEntryProfileController extends Controller
                             'actions'=>array('create','update','DoubleEntryForm',
                                 'ReadPdf','RetrieveImage','WelcomeImage','DynamicDistrict',
                                 'DynamicCommune','DynamicVillage','CheckNationalID','CheckFullname',
-                                'CheckMsisdn','CheckImsi','CheckVendorID','RetrieveCustInfo'),
+                                'CheckMsisdn','CheckImsi','CheckVendorID','RetrieveCustInfo','SecondEntrySubmit'),
                             'users'=>array('@'),
                     ),
                     array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -46,6 +46,10 @@ class DoubleEntryProfileController extends Controller
                             'users'=>array('*'),
                     ),
             );
+    }
+    
+    public function exception_error_handler($errno, $errstr, $errfile, $errline ) {
+        throw new ErrorException($errstr, $errno, 0, $errfile, $errline);
     }
 
     /**
@@ -482,5 +486,91 @@ class DoubleEntryProfileController extends Controller
             //$data['div_single_form']=$this->renderpartial('_ajax_content',array('model'=>$model,));
             echo CJSON::encode($data);
         }            
+    }
+    
+    public function actionSecondEntrySubmit()
+    {
+        $session = Yii::app()->getSession(); 
+        $model= new DoubleEntryProfile();
+        $miss_matched_model = new MissMatchedInput();
+        
+        $this->performAjaxValidation($model);
+        if(isset($_POST['DoubleEntryProfile']))
+        {
+            $double_national_id=$_POST['DoubleEntryProfile']['national_id'];
+            $double_fullname=$_POST['DoubleEntryProfile']['fullname'];
+            $double_msisdn=$_POST['DoubleEntryProfile']['msisdn'];
+            $double_imsi=$_POST['DoubleEntryProfile']['imsi'];
+            $double_vendorid=$_POST['DoubleEntryProfile']['vendorid'];
+            
+            $single_national_id=$_POST['national_id'];
+            $single_fullname=$_POST['fullname'];
+            $single_msisdn=$_POST['msisdn'];
+            $single_imsi=$_POST['imsi'];
+            $single_vendorid=$_POST['vendorid'];
+            
+            $user_id=Yii::app()->user->getId();
+            $transaction=$model->dbConnection->beginTransaction();    
+            try{
+                set_error_handler(array(&$this, "exception_error_handler")); 
+                
+                $file_id =  SingleEntryProfile::model()->daily_file_save($session['double_batch_id'], $session['double_filename']);
+                $status=  UserActionLog::model()->audit_log($model->file_id, $user_id, 'input', '','double');
+                if($status)
+                {
+                    if($double_national_id!=$single_national_id || $double_fullname!=$single_fullname || $double_msisdn!=$single_msisdn || $double_imsi!=$single_imsi || $double_vendorid!=$single_vendorid)
+                    {
+                        // in double profile 1 --> matched, 2 --> miss matched
+                        $input_status=2;
+                        $miss_matched_model->file_id=$file_id;
+                        $miss_matched_model->title=$_POST['DoubleEntryProfile']['title'];
+                        $miss_matched_model->fullname=$_POST['DoubleEntryProfile']['fullname'];
+                        $miss_matched_model->national_id=$_POST['DoubleEntryProfile']['national_id'];
+                        $miss_matched_model->province_code=$_POST['DoubleEntryProfile']['province_code'];
+                        $miss_matched_model->district_code=$_POST['DoubleEntryProfile']['district_code'];
+                        $miss_matched_model->commune_code=$_POST['DoubleEntryProfile']['commune_code'];
+                        $miss_matched_model->village_code=$_POST['DoubleEntryProfile']['village_code'];
+                        $miss_matched_model->location=$_POST['DoubleEntryProfile']['village_name'].','.$_POST['DoubleEntryProfile']['street_no'].','.$_POST['DoubleEntryProfile']['house_no'];
+                        $miss_matched_model->dob=$_POST['DoubleEntryProfile']['dob'];
+                        $miss_matched_model->vendorid=$_POST['DoubleEntryProfile']['vendorid'];
+                        $miss_matched_model->msisdn=$_POST['DoubleEntryProfile']['msisdn'];
+                        $miss_matched_model->imsi=$_POST['DoubleEntryProfile']['imsi'];
+                        $miss_matched_model->status=$input_status;
+
+                        $miss_matched_model->save();
+                    }else{
+                        $input_status=1;
+                    }
+                    
+                    $model->file_id=$file_id;
+                    $model->title=$_POST['DoubleEntryProfile']['title'];
+                    $model->fullname=$_POST['DoubleEntryProfile']['fullname'];
+                    $model->national_id=$_POST['DoubleEntryProfile']['national_id'];
+                    $model->province_code=$_POST['DoubleEntryProfile']['province_code'];
+                    $model->district_code=$_POST['DoubleEntryProfile']['district_code'];
+                    $model->commune_code=$_POST['DoubleEntryProfile']['commune_code'];
+                    $model->village_code=$_POST['DoubleEntryProfile']['village_code'];
+                    $model->location=$_POST['DoubleEntryProfile']['village_name'].','.$_POST['DoubleEntryProfile']['street_no'].','.$_POST['DoubleEntryProfile']['house_no'];
+                    $model->dob=$_POST['DoubleEntryProfile']['dob'];
+                    $model->vendorid=$_POST['DoubleEntryProfile']['vendorid'];
+                    $model->msisdn=$_POST['DoubleEntryProfile']['msisdn'];
+                    $model->imsi=$_POST['DoubleEntryProfile']['imsi'];
+                    $model->input_status=$input_status;
+
+                    $model->save();
+                    
+                    Yii::app()->session->remove('double_filename');
+                    Yii::app()->session->remove('double_batch_id'); 
+                    $transaction->commit();
+                }
+                
+            }catch (Exception $e){
+                Yii::app()->session->remove('double_filename');
+                Yii::app()->session->remove('double_batch_id');
+                $transaction->rollback();
+                //echo $e->getMessage(); die();
+            }
+            $this->redirect(array('DoubleEntryForm'));
+        }        
     }
 }

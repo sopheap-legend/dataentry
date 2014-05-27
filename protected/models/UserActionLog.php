@@ -12,94 +12,106 @@
  */
 class UserActionLog extends CActiveRecord
 {
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'user_action_log';
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName()
+    {
+            return 'user_action_log';
+    }
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('file_id, user_id, event_date, flag', 'required'),
-			array('file_id, user_id', 'numerical', 'integerOnly'=>true),
-			array('flag', 'length', 'max'=>20),
-			array('reason', 'length', 'max'=>100),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('file_id, user_id, event_date, flag, reason', 'safe', 'on'=>'search'),
-		);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules()
+    {
+            // NOTE: you should only define rules for those attributes that
+            // will receive user inputs.
+            return array(
+                    array('file_id, user_id, event_date, flag', 'required'),
+                    array('file_id, user_id', 'numerical', 'integerOnly'=>true),
+                    array('flag', 'length', 'max'=>20),
+                    array('reason', 'length', 'max'=>100),
+                    // The following rule is used by search().
+                    // @todo Please remove those attributes that should not be searched.
+                    array('file_id, user_id, event_date, flag, reason', 'safe', 'on'=>'search'),
+            );
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+            // NOTE: you may need to adjust the relation name and the related
+            // class name for the relations automatically generated below.
+            return array(
+            );
+    }
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'file_id' => 'File',
-			'user_id' => 'User',
-			'event_date' => 'Event Date',
-			'flag' => 'Flag',
-			'reason' => 'Reason',
-		);
-	}
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels()
+    {
+            return array(
+                    'file_id' => 'File',
+                    'user_id' => 'User',
+                    'event_date' => 'Event Date',
+                    'flag' => 'Flag',
+                    'reason' => 'Reason',
+            );
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
+     */
+    public function search()
+    {
+            // @todo Please modify the following code to remove attributes that should not be searched.
 
-		$criteria=new CDbCriteria;
+            $criteria=new CDbCriteria;
 
-		$criteria->compare('file_id',$this->file_id);
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('event_date',$this->event_date,true);
-		$criteria->compare('flag',$this->flag,true);
-		$criteria->compare('reason',$this->reason,true);
+            $criteria->compare('file_id',$this->file_id);
+            $criteria->compare('user_id',$this->user_id);
+            $criteria->compare('event_date',$this->event_date,true);
+            $criteria->compare('flag',$this->flag,true);
+            $criteria->compare('reason',$this->reason,true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+            return new CActiveDataProvider($this, array(
+                    'criteria'=>$criteria,
+            ));
+    }
 
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return UserActionLog the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return UserActionLog the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+            return parent::model($className);
+    }
+    
+    public function audit_log($file_id,$user_id,$flag,$reasion,$type)
+    {
+        $model = new UserActionLog();
+        $model->file_id=(int)$file_id;
+        $model->user_id=(int)$user_id;
+        $model->event_date=date("Y-m-d H:i:s");
+        $model->flag=$flag;
+        $model->reason=$reasion;
+        $model->input_type=$type;
+        return $model->save();
+    }
 }

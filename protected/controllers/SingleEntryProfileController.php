@@ -352,7 +352,7 @@ class SingleEntryProfileController extends Controller
                 set_error_handler(array(&$this, "exception_error_handler")); 
                 
                 $model->file_id=$model->daily_file_save($session['batch_file_id'], $session['filename']);
-                $status=$model->audit_log($model->file_id, $user_id, 'input', '');
+                $status=$model->audit_log($model->file_id, $user_id, 'input', '','single');
                 if($status)
                 {
                     $model->title=$_POST['SingleEntryProfile']['title'];
@@ -408,7 +408,7 @@ class SingleEntryProfileController extends Controller
                     //$status='';
                     $user_id=Yii::app()->user->getId();
                     $model->file_id=$model->daily_file_save($session['batch_file_id'], $session['filename']);                    
-                    $status=$model->audit_log($model->file_id, $user_id, 'rejected', $_POST['reason']);
+                    $status=$model->audit_log($model->file_id, $user_id, 'rejected', $_POST['reason'],'single');
                     if($status)
                     {
                         $curr_path="/vagrant/single_entry";

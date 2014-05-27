@@ -2,7 +2,7 @@
 //echo $session['filename'];
 $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
             'id'=>'double-entry-profile-form',
-            //'action'=>Yii::app()->createUrl('SingleEntryProfile/FirstEntrySubmit/'),
+            'action'=>Yii::app()->createUrl('DoubleEntryProfile/SecondEntrySubmit/'),
             'enableAjaxValidation'=>true,
             'enableClientValidation'=>true,
             'clientOptions'=>array(
@@ -99,11 +99,11 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 </div>
 <?php $this->endWidget(); ?>
 <?php
-    $url=Yii::app()->createUrl('DoubleEntryProfile/RetrieveImage/');
+    //$url=Yii::app()->createUrl('DoubleEntryProfile/RetrieveImage/');
     Yii::app()->clientScript->registerScript( 'double_retrieve_image',"
             $('#retrieve-image').click(function() {
             $.ajax({
-                url:'$url', 
+                url:'RetrieveImage', 
                 dataType : 'json',    
                 type : 'post',    
                 //beforeSend: function() { $('#loading').addClass('waiting'); },
@@ -374,6 +374,22 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                     }
                 }
             });
+        });
+    ");
+    
+    Yii::app()->clientScript->registerScript( 'double_prevent_no_retrieve_image',"
+        $('#single-entry').click(function(e) {
+            var s_national_val;
+            s_national_val=$('#national_id').val();
+            if(s_national_val=='')
+            {
+               e.preventDefault();
+               $('.message').hide();
+               $('.load-indicator').slideUp('slow');
+               $('.message').slideToggle();
+               $('div.alert').html('Please Retrieve Your Image first');
+               $('.message').animate({opacity: 1.0}, 3000).fadeOut('slow');
+            }
         });
     ");
 ?>

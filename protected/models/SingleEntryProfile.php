@@ -238,7 +238,7 @@ class SingleEntryProfile extends CActiveRecord
             return $file_id;
         }
         
-        public function audit_log($file_id,$user_id,$flag,$reasion)
+        public function audit_log($file_id,$user_id,$flag,$reasion,$type)
         {
             $model = new UserActionLog();
             $model->file_id=(int)$file_id;
@@ -246,6 +246,7 @@ class SingleEntryProfile extends CActiveRecord
             $model->event_date=date("Y-m-d H:i:s");
             $model->flag=$flag;
             $model->reason=$reasion;
+            $model->input_type=$type;
             return $model->save();
         }
 

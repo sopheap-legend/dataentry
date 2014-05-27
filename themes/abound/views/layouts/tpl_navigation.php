@@ -15,36 +15,40 @@
           
           <div class="nav-collapse">
 		   <?php 
-		   	$this->widget('bootstrap.widgets.TbNavbar', array(
-                            'brandLabel' => '',
-                            'display' => null,
-                            'items' => array(
-                                    array(
-                                            'class' => 'bootstrap.widgets.TbNav',
-                                            'items' => array(
-                                            array('label'=>'Home', 'url'=>array('/site/index')),   
-                                            array('label'=>'Admin', 'url'=>'#','items'=>array(
-                                                            array('label'=>'Assignments', 'url'=>array('/auth/view')),
-                                                            //array('label'=>'Permissions', 'url'=>'#'),
-                                                            array('label'=>'Tasks', 'url'=>'#'),
-                                                            array('label'=>'Operations', 'url'=>'#'),
-                                                    )
-                                            ,'visible'=>Yii::app()->user->checkAccess('Admin'),
-                                            ),
-
-                                            array('label'=>'Data Entry', 'url'=>'#','items'=>array(
-                                                    array('label'=>'Single Entry', 'url'=>array('/SingleEntryProfile/SingleEntryForm')),
-                                                    array('label'=>'Double Entry', 'url'=>array('/DoubleEntryProfile/DoubleEntryForm')),
-                                                ), 'visible'=>!Yii::app()->user->isGuest,
-                                            ),    
-                                            //array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-                                            array('label'=>'Contact', 'url'=>array('/site/contact')),
-                                            array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                                            array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-                                    ),
+                    $this->widget('bootstrap.widgets.TbNavbar', array(
+                        'brandLabel' => '',
+                        'display' => null,
+                        'items' => array(
+                            array(
+                                    'class' => 'bootstrap.widgets.TbNav',
+                                    'items' => array(
+                                    array('label'=>'Home', 'url'=>array('/site/index')),   
+                                    array('label'=>'Admin', 'url'=>'#','items'=>array(
+                                                    array('label'=>'Assignments', 'url'=>array('/auth/view')),
+                                                    //array('label'=>'Permissions', 'url'=>'#'),
+                                                    array('label'=>'Tasks', 'url'=>'#'),
+                                                    array('label'=>'Operations', 'url'=>'#'),
+                                            )
+                                    ,'visible'=>Yii::app()->user->checkAccess('Admin'),
+                                    ),                                               
+                                    array('label'=>'Data Entry', 'url'=>'#','items'=>array(
+                                            array('label'=>'Single Entry', 'url'=>array('/SingleEntryProfile/SingleEntryForm')),
+                                            array('label'=>'Double Entry', 'url'=>array('/DoubleEntryProfile/DoubleEntryForm')),
+                                        ), 'visible'=>!Yii::app()->user->isGuest,
+                                    ),  
+                                    /*array('label'=>'Quality Assure', 'url'=>'#','items'=>array(
+                                            array('label'=>'Single Entry', 'url'=>array('/SingleEntryProfile/SingleEntryForm')),
+                                            array('label'=>'Double Entry', 'url'=>array('/DoubleEntryProfile/DoubleEntryForm')),
+                                        ), 'visible'=>!Yii::app()->user->isGuest,
+                                    ),*/     
+                                    array('label'=>'Quality Assure', 'url'=>'#','visible'=>!Yii::app()->user->isGuest),
+                                    array('label'=>'Export File', 'url'=>'#','visible'=>!Yii::app()->user->isGuest),
+                                    array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                                    array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
                                 ),
                             ),
-			));
+                        ),
+                    ));
 		?> 
     	</div>
     </div>

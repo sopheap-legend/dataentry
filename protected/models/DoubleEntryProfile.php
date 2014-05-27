@@ -50,11 +50,11 @@ class DoubleEntryProfile extends CActiveRecord
                     array('title', 'length', 'max'=>3),
                     array('fullname, location', 'length', 'max'=>50),
                     array('national_id', 'length', 'max'=>20),
-                    array('imsi','length','min'=>4,'max'=>10),
+                    array('imsi','length','min'=>2,'max'=>10),
                     //array('dob', 'length', 'max'=>14),
                     array('dob','validatedob','length','min'=>4,'max'=>10),
                     //array('msisdn, vendorid, last_update', 'length', 'max'=>15),
-                    array('msisdn,', 'length', 'min'=>8, 'max'=>9),
+                    array('msisdn,', 'length', 'min'=>2, 'max'=>9),
                     array('vendorid','length', 'max'=>10),
                     array('state', 'length', 'max'=>2),
                     // The following rule is used by search().
