@@ -1,17 +1,6 @@
 <?php
 /* @var $this DoubleEntryProfileController */
 /* @var $model DoubleEntryProfile */
-
-$this->breadcrumbs=array(
-	'Double Entry Profiles'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List DoubleEntryProfile', 'url'=>array('index')),
-	array('label'=>'Create DoubleEntryProfile', 'url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -25,46 +14,102 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-
-<h1>Manage Double Entry Profiles</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'double-entry-profile-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'file_id',
-		'title',
-		'fullname',
-		'national_id',
-		'province_code',
-		'district_code',
-		/*
-		'commune_code',
-		'village_code',
-		'location',
-		'dob',
-		'msisdn',
-		'imsi',
-		'vendorid',
-		'state',
-		'last_update',
-		'input_status',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<?php 
+    $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
+            'id'=>'quality-control-grid',
+            'enableAjaxValidation'=>true,
+            'enableClientValidation'=>true,
+            'clientOptions'=>array(
+                    'validateOnSubmit'=>true,
+            ),
+            //'layout'=>TbHtml::FORM_LAYOUT_VERTICAL,
+    ));
+?> 
+<!--<div class="well" style="max-width: 400px; margin: 0 auto 10px;">-->
+<div class="well">
+    <div class="span-1">Start Date:
+        <div class="input-append">
+        <?php 
+            $this->widget('yiiwheels.widgets.datepicker.WhDatePicker', array(
+                    'name' => 'start_date',
+                    'pluginOptions' => array(
+                    'format' => 'mm/dd/yyyy'
+                )
+            ));
+        ?>
+        <span class="add-on"><icon class="icon-calendar"></icon></span>
+        </div>
+    </div>    
+    <div class="span-1">End Date:
+        <div class="input-append">
+        <?php 
+            $this->widget('yiiwheels.widgets.datepicker.WhDatePicker', array(
+                    'name' => 'end_date',
+                    'pluginOptions' => array(
+                    'format' => 'mm/dd/yyyy'
+                )
+            ));
+        ?>
+        <span class="add-on"><icon class="icon-calendar"></icon></span>
+        </div>
+    </div>  
+    <div class="span-1"><?php echo TbHtml::button('View',array('color' => TbHtml::BUTTON_COLOR_PRIMARY, 'size' => TbHtml::BUTTON_SIZE_SMALL)); ?></div>
+</div>    
+    <?php
+    $box = $this->beginWidget('yiiwheels.widgets.box.WhBox', array(
+        'title' => 'Quality Control',
+         'headerIcon' => 'icon-file',
+    ));
+    ?> 
+    <?php //$filedate=''; ?>
+    <div id='grid-control'>
+    <?php 
+        $this->widget('bootstrap.widgets.TbGridView', array(
+        'dataProvider' => $model->qualityControl($filedate),
+        'type' => TbHtml::GRID_TYPE_STRIPED,    
+        'template' => "{items}",
+        'columns'=>array(
+                array('name'=>'id',
+                       'header'=>'#', 
+                ),
+                array('name'=>'title',
+                       'header'=>'Title', 
+                ),
+                array('name'=>'fullname',
+                       'header'=>'Customer Name', 
+                ),
+                array('name'=>'national_id',
+                       'header'=>'National ID', 
+                ),
+                array('name'=>'imsi',
+                       'header'=>'IMSI', 
+                ),
+                array('name'=>'msisdn',
+                       'header'=>'MSISDN', 
+                ),
+                array('name'=>'file_name',
+                       'header'=>'File Name', 
+                ),
+                array('name'=>'file_id',
+                      'filter'=>false,  
+                      'headerHtmlOptions' => array('style' => 'display:none'),
+                      'htmlOptions' => array('style' => 'display:none'),  
+                ),
+                array(
+                    'class'=>'bootstrap.widgets.TbButtonColumn',
+                    'template'=>'{view}{delete}',
+                    'buttons'=>array(
+                        'view' => array(
+                            'url'=>'#',
+                        ),
+                        'delete' => array(
+                            'url'=>'#',
+                        ),
+                    ),
+                ),
+            ),
+        ));
+    ?>
+    </div>
+    <?php $this->endWidget(); ?>
+<?php $this->endWidget(); ?>

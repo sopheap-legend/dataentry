@@ -41,7 +41,7 @@
                                             array('label'=>'Double Entry', 'url'=>array('/DoubleEntryProfile/DoubleEntryForm')),
                                         ), 'visible'=>!Yii::app()->user->isGuest,
                                     ),*/     
-                                    array('label'=>'Quality Assure', 'url'=>'#','visible'=>!Yii::app()->user->isGuest),
+                                    array('label'=>'Quality Assure', 'url'=>array('/DoubleEntryProfile/QualityControl'),'visible'=>!Yii::app()->user->isGuest),
                                     array('label'=>'Export File', 'url'=>'#','visible'=>!Yii::app()->user->isGuest),
                                     array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                                     array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)

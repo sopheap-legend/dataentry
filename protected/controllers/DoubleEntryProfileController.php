@@ -35,7 +35,8 @@ class DoubleEntryProfileController extends Controller
                             'actions'=>array('create','update','DoubleEntryForm',
                                 'ReadPdf','RetrieveImage','WelcomeImage','DynamicDistrict',
                                 'DynamicCommune','DynamicVillage','CheckNationalID','CheckFullname',
-                                'CheckMsisdn','CheckImsi','CheckVendorID','RetrieveCustInfo','SecondEntrySubmit'),
+                                'CheckMsisdn','CheckImsi','CheckVendorID','RetrieveCustInfo','SecondEntrySubmit',
+                                'QualityControl'),
                             'users'=>array('@'),
                     ),
                     array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -572,5 +573,15 @@ class DoubleEntryProfileController extends Controller
             }
             $this->redirect(array('DoubleEntryForm'));
         }        
+    }
+    
+    public function actionQualityControl()
+    {
+        $model = new DoubleEntryProfile('qualityControl');
+        $filedate='';
+        
+        $this->render('admin',array(
+                    'model'=>$model,'filedate'=>$filedate,
+            ));
     }
 }

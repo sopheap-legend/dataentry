@@ -140,46 +140,82 @@ class DoubleEntryProfile extends CActiveRecord
     }
     
     public function check_valid_date($dob)
-        {            
-            $dob_arr  = explode('-', $dob);
-            if(count($dob_arr)==1)
+    {            
+        $dob_arr  = explode('-', $dob);
+        if(count($dob_arr)==1)
+        {
+            return 'YES';
+        }elseif(count($dob_arr)==3)
+        {
+            if(strlen($dob)>8)
             {
-                return 'YES';
-            }elseif(count($dob_arr)==3)
-            {
-                if(strlen($dob)>8)
-                {
-                    if (checkdate($dob_arr[1], $dob_arr[2],$dob_arr[0])) {
-                        return 'YES';
-                    } else {
-                        return 'NO';
-                    }
-                }else{
+                if (checkdate($dob_arr[1], $dob_arr[2],$dob_arr[0])) {
+                    return 'YES';
+                } else {
                     return 'NO';
                 }
             }else{
                 return 'NO';
             }
-        } 
+        }else{
+            return 'NO';
+        }
+    } 
 
-        public function validatedob($attribute,$params)
-        {  
-            //$chk='';
-            //echo "bakou";
-            if($this->dob!='')
-            {   
-                if(strlen($this->dob)<$params['min'])
+    public function validatedob($attribute,$params)
+    {  
+        //$chk='';
+        //echo "bakou";
+        if($this->dob!='')
+        {   
+            if(strlen($this->dob)<$params['min'])
+            {
+                $this->addError('dob','Date input never less than 4 digit');
+            }else{
+                $chk=$this->check_valid_date($this->dob);
+                if($chk=='NO')
                 {
-                    $this->addError('dob','Date input never less than 4 digit');
-                }else{
-                    $chk=$this->check_valid_date($this->dob);
-                    if($chk=='NO')
-                    {
-                        $this->addError('dob','Date is not valid');
-                    }
+                    $this->addError('dob','Date is not valid');
                 }
             }
         }
+    }
+    
+    protected function qulityCount($filedate)
+    {
+        $sql="select count(*) FROM double_entry_profile
+                WHERE input_status=2";
+        
+        $cmd = Yii::app()->db->createCommand($sql);
+        
+        return $cmd->queryScalar();
+    }
+
+    public function qualityControl($filedate)
+    {
+        $sql="select @rownum:=@rownum+1 id,file_id,title,fullname,national_id,imsi,msisdn,file_name
+            from(
+            SELECT t1.file_id,title,fullname,national_id,imsi,msisdn,file_name
+            FROM double_entry_profile t1
+            INNER JOIN daily_file_input t2 ON t1.file_id=t2.file_id
+            WHERE input_status=2
+            )cl,(SELECT @rownum:=0) r";
+        
+        $filedate='';
+        $count=$this->qulityCount($filedate);
+        return new CSqlDataProvider($sql,array(
+                'totalItemCount'=>$count,
+                //'keyField' => 'employee_id', //Use 'keyfield' to avoid the error, Undefined index 'id' and keyfield = name of the selected column
+                'sort'=>array(
+                    'attributes'=>array(
+                        'msisdn','imsi'
+                    )
+                ),
+                'pagination'=>array(
+                    'pageSize'=>10,
+                ),
+            ));
+    }
 
     /**
      * Returns the static model of the specified AR class.
